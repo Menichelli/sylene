@@ -1,0 +1,26 @@
+
+Plan :
+
+Web-app --
+On nomme "web-application" toute application généralement déployée sur un serveur distant et manipulable a travers le réseau par un navigateur web.
+Les web-applications ont l'avantage de permettre à un nombre éventuellement élevé de client de se connecter dessus.
+Dans notre cas l'utilisation d'une web application a principalement trois avantages :
+ - Elle permet de limiter le code à écrire, en effet les autres architectures envisageables (basées sur java rmi par exemple) impliquaient l'écriture d'un client d'affichage et d'une interface d'administration à distance.
+ - Elle permet d'assurer l'évolutivité du déploiement de la solution : si à l'avenir il était nécessaire de créer de nouveaux points d'affichage il suffirait juste de dupliquer le dispositif client (DEFINIR DISPOSITIF CLIENT) à l'endroit voulu et de lui permettre de se connecter au serveur.
+ - En déléguant l'affichage à un navigateur web (et dans la mesure où il existe des navigateurs web pour la quasi-totalité des architectures) on assure une excellente portabilité de l'application.
+
+Framework web --
+Les frameworks web offrent une base de développement intelligente et fonctionnelle permettant d'ériger facilement un site web sans se soucier des mécanismes de bas niveau.
+Les frameworks web (modernes) prennent notamment en charge une partie importante de la sécurité d'un site. Ils disposent de bibliothèques	de modules importantes et complète touchant à de larges domaines. 
+
+Alternatives écartés --
+SITE ex-nihilo : la création de site web ou d'apllications depuis rien est une mauvaise pratique à tout point vue autant par la charge de travail inutile générée que par la piètre qualité du code qui en résulte (au regard des frameworks déjà en place)
+
+Django --
+Django est un framework web développé en python, largement utilisé y compris par des sites importants (par exemple, 20minutes, Libération.fr, Disqus, Century21, Convore, Instagram, Threadless…). Réputé pour sa simplicité d'utilisation il permet à une équipe de se former rapidement à cette technologie tout en produisant un code de bonne qualité (d'où son slogan : "Django the framework for perfectionist with deadlines"). 
+
+Alternatives écartés --
+Django n'est pas le seul framework web
+ROR : nous avons écarté ruby on rails, un framework aux qualités semblable à celles de django pour le temps d'apprentissage qu'il nécessite
+STRUTS : personne dans l'équipe n'avait d'expérience avec struts aussi l'avons nous écarté 
+SYMPHONY : de même que Struts.

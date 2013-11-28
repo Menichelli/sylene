@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1>Votre Panier</h1>
+<br/>
+{% if not formations.len %}
+{% for formation in formations %}
+<li>{{ formation.nom }}</a><br/>Description : {{ formation.desc }}</li><br/>
+{% endfor %}
+<br/><div align=center>
+<a href = '/panier/vider'>Vider le panier</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href = '/panier/valider'>Valider votre commande</a>
+</div>
+{% else %}
+Votre panier est vide.
+{% endif %}
+{% endblock %}

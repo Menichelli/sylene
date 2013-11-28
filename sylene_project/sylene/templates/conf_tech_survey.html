@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block titre %}Sylene | Confirmation des ajouts des documents de veilles{% endblock %}
+{% block body %}
+<a href="/userpanel/" xmlns="http://www.w3.org/1999/html"><h1>Confirmation des ajouts des documents de veilles</h1></a>
+<div id="page">
+
+    {% if fichiers_acceptes|length_is:"0" %}
+    {% else %}
+    <div id="filesAccepted">
+        <h2>Les fichiers suivants ont été enregistrés :</h2><br/>
+        {% for f in fichiers_acceptes %}
+            <dd/>{{ f.name }}<br/>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if fichiers_refuses|length_is:"0" %}
+    {% else %}
+    <div id="filesRefused">
+        <h2>Les fichiers suivants ont été refusés :</h2><br/>
+        {% for f in fichiers_refuses %}
+            <dd/>{{ f.name }}<br/>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+</div>
+{% endblock %}

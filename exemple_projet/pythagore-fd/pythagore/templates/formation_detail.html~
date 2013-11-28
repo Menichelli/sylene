@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1>Formation : {{ formation.nom }}</h1>
+<br/>
+<h2>Description de la formation :</h2><br/>
+{{ formation.desc }}
+
+{% if logged %}
+<div align="center">
+   <a href = '/order/{{ formation.id }}'>Commander la formation</a>
+</div>
+{% else %}
+<div class=message>Vous devez être connecté pour pouvoir commander cette formation</div>
+{% endif %}
+{% endblock %}

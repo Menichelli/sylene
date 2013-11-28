@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1>Les catégories dans lesquelles nous proposons des formations</h1>
+<br/>
+{% for cat in categories %}
+<li><a href="/cat/{{ cat.id }}/">{{ cat.nom }}</a><br/>   Description : {{ cat.desc }}</li>
+{% endfor %}
+{% endblock %}

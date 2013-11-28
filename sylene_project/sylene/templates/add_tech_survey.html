@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block titre %}Sylene | Ajout de documents de Veille Technologique{% endblock %}
+{% block body %}
+<a href="/userpanel/" xmlns="http://www.w3.org/1999/html"><h1>Ajout de documents de veille technologique</h1></a>
+<div id="page">
+
+    <div id="add_tech_survey">
+        {{ x }}<br/>
+        Sélectionnez tous les PDF de veille technologique à ajouter<br/><br/>
+        <form action="/userpanel/conf_tech_survey/" method="post" enctype="multipart/form-data">{% csrf_token %}
+            <input type="file" name="doc" multiple accept="application/pdf"><br/>
+            <input type="submit"/>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+- model:models.DocumentVeille
+   pk:1
+   fields:
+      auteur:auteur1
+      date_publiee:"2013-03-17T23:36:12+00:00"
+      etat:true
+      fichier:/var/sylene/doc/fichier1
+      titre:Veille1
+      source:source1
+      motsCles:"motsClesDOC1-1 motClesDoc1-2"
+- model:models.DocumentVeille
+   pk:2
+   fields:
+      auteur:auteur1
+      date_publiee:"2013-03-17T23:36:12+00:00"
+      etat:false
+      fichier:/var/sylene/doc/fichier2
+      titre:Veille2
+      source:source2
+      motsCles:"motsClesDOC2-1 motClesDoc2-2"
+- model:models.MessageComplexe
+   pk:3
+   fields:
+      dateDebut:"2013-03-17T23:36:12+00:00"
+      dateFin:"2013-03-19T23:36:12+00:00"
+      fichier:/var/sylene/doc/fichier2
+- model:models.MessageSimple
+   pk:4
+   fields:
+      dateDebut:"2013-03-17T23:36:12+00:00"
+      dateFin:"2013-03-18T23:36:12+00:00"
+      message:"un message1"
+- model:models.Template
+   pk:5
+   fields:
+      nom:template1
+      fichier:/var/sylene/doc/fichier3
+      description:"description template1"

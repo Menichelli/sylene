@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block titre %}Sylene | Accueil{% endblock %}
+{% block body %}
+<a href="/" ><h1>Sylene</h1></a>
+<div id="page">
+    <button id="bViewer" type="button" onclick="location.href='/nyi/'">Accèder directement à la Visionneuse</button><br/>
+
+    {% if not logged %}
+    <button id="bApp" type="button" onclick="toggle_visibility('formulaire','bApp');">Connectez vous pour accèder à l'application</button>
+
+    <div id="formulaire">
+        <form action="/login/" method="post">{% csrf_token %}
+            <table>
+                <tr>
+                    <th>Nom d'utilisateur</th> <th><input type="text" name="username" size="40" /><br /></th>
+                </tr>
+                <tr>
+                    <th>Mot de passe</th> <th><input type="password" name="password" size="40" /><br /></th>
+                </tr>
+                <tr>
+                    <th></th><th id="connexion"><input type="submit" value="Connexion" /><br /></th>
+                </tr>
+            </table>
+        </form>
+    </div>
+    {% else %}
+    <button type="button" onclick="location.href='/userpanel/'">Cliquez ici pour accèder au panneau utilisateur</button>
+    {% endif %}
+</div>
+{% endblock %}

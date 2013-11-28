@@ -1,0 +1,41 @@
+from django.db import models
+
+from django.contrib.auth.models import User
+
+class Document(models.Model):
+   auteur = models.ForeignKey(User)
+   date_publiee = models.DateField('Date publiee')
+   
+   class Meta:
+      abstract = True
+
+class DocumentVeille(Document):
+   etat = models.BooleanField()
+   url = models.URLField(max_length=200)
+   titre = models.CharField(max_length=200)
+   source = models.URLField(max_length=200)
+   motsCles = models.CharField(max_length=200)
+
+   class Meta:
+      verbose_name_plural = "Documents Veilles"
+
+class Message(Document):
+   dateDebut = models.DateTimeField('Date de debut')
+   dateFin = models.DateTimeField('Date de fin')
+
+class MessageComplexe(Message):
+   url = models.URLField(max_length=200)
+
+   class Meta:
+      verbose_name_plural = "Messages Complexes"
+
+class MessageSimple(Message):
+   message = models.CharField(max_length=200)
+
+   class Meta:
+      verbose_name_plural = "Messages Simples"
+
+class Template(models.Model):
+   nom = models.CharField(max_length=200)
+   url = models.URLField(max_length=200)
+   description = models.CharField(max_length=500)

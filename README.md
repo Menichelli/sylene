@@ -1,4 +1,0 @@
-sylene
-======
-
-Projet Sylene

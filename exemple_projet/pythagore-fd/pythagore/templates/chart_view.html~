@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1>Votre Panier</h1>
+<br/>
+{% for formation in formations %}
+<li>{{ formation.nom }}</a><br/>Description : {{ formation.desc }}<br/></li>
+{% endfor %}
+{% endblock %}

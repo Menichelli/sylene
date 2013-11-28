@@ -1,0 +1,80 @@
+<head>
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}gen.css"/>
+<title>Formations</title>
+</head>
+
+<body bgcolor=#ffffff>
+<div class="page_contenu">
+<div id="banniere">
+<a href="/" ><h1>Apprendre a apprendre</h1></a>
+</div>
+<div class="menu_boutons">
+<a href="/" class="bouton">Accueil</a>
+<a href="/cat/" class="bouton">Catalogue</a>
+</div>
+
+<div class="img_menu i_formations"></div>
+<div class="menu_gauche">
+<div class="pstd">
+<ul class="puce">
+<br/>
+<b>Categories</b>
+<br/>
+{% for cat in categories %}
+<li><a href="/cat/{{ cat.id }}/">{{ cat.nom }}</a></li>
+{% endfor %}
+</ul>
+
+</div></div>
+<div class="menu_droite pstd">
+<div style="clear:both;"></div>
+<div id="contentDiv">
+
+{% if not logged %}
+<div align="center"><b>Connexion</b><br/></div>
+<form action="/login/" method="post">
+{% csrf_token %}
+<table>
+ <tr>
+  <th>Login</th> <th><input type="text" name="username" size="15" /><br /></th>
+ </tr>
+ <tr>
+  <th>Password</th> <th><input type="password" name="password" size="15" /><br /></th>
+ </tr>
+</table>
+  <div align="center">
+    <p><input type="submit" value="Connexion" /></p>
+  </div>
+</form>
+<br/>
+<a href="/register/">Créer un nouveau compte</a>
+{% else %}
+Bonjour, <b>{{ user.username }}</b><br/>
+<a href="/panier/">Mon Panier</a><br/>
+<a href="/logout/">Déconnexion</a>
+{% endif %}
+</div></div>
+
+
+<div class="contenu"><div class="pstd">
+
+{% if message != None %}
+<div class="message">{{ message }}</div>
+{% endif %}
+
+{% block content %}{% endblock %}
+</div></div>
+
+<div class="page_pied"></div>
+<div class="pstd">
+<center><font size=-4>
+<br>
+(c) 2012 Pythagore F.D. Paris</center>
+
+<center>Pour nous contacter:01 55 33 52 10  ou pfd@pythagore-fd.fr</center>
+</div>
+</body></html>
+
+
+
+

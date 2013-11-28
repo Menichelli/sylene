@@ -1,0 +1,12 @@
+<!doctype html> <html lang="fr">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}gen.css"/>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/action.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=latin-1" />
+    <title>{% block titre %}{% endblock %}</title>
+</head>
+<body>
+{% if logged %}<header><div id="log">Vous êtes connecté en tant que: {{ username }} | <a href="/logout/">Cliquez ici pour vous déconnecter.</a></div></header><br/>{% endif %}
+{% block body %}{% endblock %}
+</body>
+</html>

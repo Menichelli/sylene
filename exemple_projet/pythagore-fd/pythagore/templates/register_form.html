@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1>S'enregistrer</h1>
+<form action="/register/validate/" method="post">
+<div align="center">
+<table>
+ <tr>
+  <th>Nom d'utilisateur</th> <th><input type="text" name="username" size="15" /><br /></th>
+ </tr>
+ <tr>
+  <th>Mot de passe</th> <th><input type="password" name="password" size="15" /><br /></th>
+ </tr>
+ <tr>
+  <th>Email</th> <th><input type="email" name="email" size="15" /><br /></th>
+ </tr>
+</table>
+</div>
+  <div align="center">
+    <p><input type="submit" value="Connexion" /></p>
+  </div>
+</form>
+{% endblock %}

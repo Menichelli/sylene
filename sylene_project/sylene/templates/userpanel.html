@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block titre %}Sylene | Accueil{% endblock %}
+{% block body %}
+<a href="/userpanel/" ><h1>Panneau de l'utilisateur</h1></a>
+<div id="page">
+    <button type="button" onclick="location.href='/'">Retourner à l'accueil</button><br/>
+    <button type="button" onclick="location.href='/userpanel/add_tech_survey/'">Poster des documents de Veille Technologique</button><br/>
+    <button type="button" onclick="location.href='/nyi/'">Poster un message</button><br/>
+    <button type="button" onclick="location.href='/userpanel/add_user/'">Créer un compte</button><br/>
+    <button type="button" onclick="location.href='/admin/'">Accèder à l'interface SuperAdmin</button>
+</div>
+{% endblock %}
