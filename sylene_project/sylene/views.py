@@ -27,6 +27,11 @@ def home(request):
 #Called by: viewer/
 #Le viewer
 def viewer(request):
+    #with open('resources/document_veille/2013_11/Cyber_-_Veille_-_Espionnage_Industriel_1.pdf', 'r') as pdf:
+    #    response = HttpResponse(pdf.read(), mimetype='application/pdf')
+    ##    response['Content-Disposition'] = 'inline;filename=some_file.pdf'
+    #    return response
+    #pdf.closed
     return render_to_response('viewer.html',context_instance=RequestContext(request))
 
 #Called by: /userpanel/
