@@ -73,7 +73,10 @@ def viewer(request):
         tmp1 = []
         for e in listDV:
             tmp1.append(e)
-        tmp2 = sorted(tmp1,lambda x, y: cmp(x.dernier_visionnage,y.dernier_visionnage),reverse=False)
+        if len(tmp1) > 1:
+            tmp2 = sorted(tmp1,lambda x,y: cmp(x.dernier_visionnage,y.dernier_visionnage),reverse=False)
+        else:
+            tmp2 = tmp1
         if len(tmp2)!=0:
             dv = tmp2[0]
             dv.dernier_visionnage = datetime.datetime.now()
@@ -81,6 +84,7 @@ def viewer(request):
             doc_url = dv.lien_image
             found = True
     if found==True:
+        message = "coucou je fais un test"
         return render_to_response('viewer.html', {'image_url' : doc_url, 'message' : message, 'message_len' : len(message)}, context_instance=RequestContext(request))
     else:
         return HttpResponse(status=500)
