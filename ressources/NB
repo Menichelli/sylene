@@ -5,6 +5,6 @@ sudo apt-get install python-yaml
 //pour charger les fixtures
 python manage.py loaddata sylene/fixtures/fix.yaml
 
-
-
+pip install Wand
+apt-get install libmagickwand-dev
 

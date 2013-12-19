@@ -10,9 +10,10 @@ from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 from django.core.context_processors import csrf
 from wand.image import Image
+from django.db.models.query import QuerySet
+from operator import attrgetter
 
 from models import *
-from forms import DocumentVeilleForm
 
 #Called by: /
 #
@@ -28,11 +29,14 @@ def home(request):
 #Called by: viewer/
 #Le viewer
 def viewer(request):
-    #with open('resources/document_veille/2013_11/Cyber_-_Veille_-_Espionnage_Industriel_1.pdf', 'r') as pdf:
-    #    response = HttpResponse(pdf.read(), mimetype='application/pdf')
-    ##    response['Content-Disposition'] = 'inline;filename=some_file.pdf'
-    #    return response
-    #pdf.closed
+    list = DocumentVeille.objects.all().order_by("-date_publiee")[:settings.NB_ETUDIANT]
+    tmp = []
+    for e in list:
+        tmp.append(e)
+    tmp = sorted(tmp,attrgetter('dernierVisionnage'))
+    dv = tmp.first()
+    dv.dernierVisionnage = datetime.datetime.now()
+    print(dv)
     return render_to_response('viewer.html',context_instance=RequestContext(request))
 
 #Called by: /userpanel/
@@ -82,24 +86,25 @@ def add_tech_survey(request):
 
 #Called by: /userpanel/conf_tech_survey/
 #Récupère les fichiers sélectionnés et les enregistre
+@login_required
 def conf_tech_survey(request):
     fichiers_acceptes = []
     fichiers_refuses = []
     for fichier in request.FILES.getlist('doc'):
         try :
-            dv = DocumentVeille(nom="todo",prenom="todo",fichier=fichier)
+            dv = DocumentVeille(fichier=fichier)
+            dv.clean()
+            dv.save()
+            with Image(filename="/var/resources/"+dv.fichier.name+"[0]",resolution=128) as img:
+                img.format = 'png'
+                img.save(filename="/var/resources/"+dv.fichier.name+".png")
+                dv.lien_image = "/media/"+dv.fichier.name+".png"
             dv.clean()
             dv.save()
             fichiers_acceptes.append(fichier)
         except Exception as e:
             print(e)
             fichiers_refuses.append(fichier)
-        try :
-            with Image(filename="/var/resources/"+dv.fichier.name+"[0]") as img:
-                img.save(filename="/var/resources/"+dv.fichier.name+".jpg")
-                dv.lien_image("/var/resources/"+dv.fichier.name+".jpg")
-        except Exception as e:
-            print(e)
     request.FILES.clear()
     return render_to_response('conf_tech_survey.html', {'logged' : True, 'username' : get_user(request).username, 'fichiers_acceptes' : fichiers_acceptes, 'fichiers_refuses' : fichiers_refuses}, context_instance=RequestContext(request))
 

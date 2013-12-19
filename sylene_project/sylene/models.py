@@ -3,7 +3,7 @@
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
-from datetime import datetime
+import datetime
 
 class Document(models.Model):
     date_publiee = models.DateField('Date publiee',auto_now=True,help_text="La date a laquelle le document est poste")
@@ -12,15 +12,16 @@ class Document(models.Model):
         abstract = True
 
 class DocumentVeille(Document,models.Model):
-    nom = models.CharField(max_length=50)
-    prenom = models.CharField(max_length=50)
-    actif = models.BooleanField(default=True,help_text="Seul les documents actifs seront affiches sur le Viewer")
     fichier = models.FileField(upload_to='document_veille/%Y_%m')
-    lien_image = models.CharField(max_length=500,help_text="Le lien vers l'image correspondate")
+    lien_image = models.CharField(max_length=500,help_text="Le lien vers l'image correspondante")
+    dernierVisionnage = models.DateField(default=datetime.datetime.fromtimestamp(0),help_text="La derniere fois que le document a ete visionne.")
 
     def clean(self):
         if not self.fichier.name.endswith('.pdf'):
             raise ValidationError(u'Le fichier doit etre un pdf!')
+
+    def __unicode__(self):
+        return self.fichier.name
 
     class Meta:
         verbose_name_plural = "Documents Veilles"

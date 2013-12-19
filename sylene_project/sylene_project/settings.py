@@ -161,3 +161,7 @@ LOGGING = {
         },
     }
 }
+
+#Le nombre d'etudiant dans la promo
+#Utilise pour savoir combien de veille techno recuperer
+NB_ETUDIANT = 25
