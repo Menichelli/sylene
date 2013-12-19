@@ -12,6 +12,7 @@ from django.core.context_processors import csrf
 from wand.image import Image
 from django.db.models.query import QuerySet
 from operator import attrgetter
+import functools
 
 from models import *
 
@@ -26,17 +27,17 @@ def home(request):
         logged = False
         return render_to_response('index.html', {'logged' : logged}, context_instance=RequestContext(request))
 
-#Called by: viewer/
+#Called by: /viewer/
 #Le viewer
 def viewer(request):
-    list = DocumentVeille.objects.all().order_by("-date_publiee")[:settings.NB_ETUDIANT]
-    tmp = []
-    for e in list:
-        tmp.append(e)
-    tmp = sorted(tmp,attrgetter('dernierVisionnage'))
-    dv = tmp.first()
-    dv.dernierVisionnage = datetime.datetime.now()
-    print(dv)
+    listDV = DocumentVeille.objects.all().order_by("-date_publiee")[:settings.NB_ETUDIANT]
+    tmp1 = []
+    for e in listDV:
+        tmp1.append(e)
+    tmp2 = sorted(tmp1,lambda x, y: cmp(x.derniervisionnage,y.derniervisionnage),reverse=False)
+    dv = tmp2[0]
+    dv.derniervisionnage = datetime.datetime.now()
+    dv.save()
     return render_to_response('viewer.html',context_instance=RequestContext(request))
 
 #Called by: /userpanel/

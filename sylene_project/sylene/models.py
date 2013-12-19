@@ -14,7 +14,7 @@ class Document(models.Model):
 class DocumentVeille(Document,models.Model):
     fichier = models.FileField(upload_to='document_veille/%Y_%m')
     lien_image = models.CharField(max_length=500,help_text="Le lien vers l'image correspondante")
-    dernierVisionnage = models.DateField(default=datetime.datetime.fromtimestamp(0),help_text="La derniere fois que le document a ete visionne.")
+    derniervisionnage = models.DateField(default=datetime.datetime.fromtimestamp(0),help_text="La derniere fois que le document a ete visionne.",name="Dernier Visionnage")
 
     def clean(self):
         if not self.fichier.name.endswith('.pdf'):
@@ -40,6 +40,7 @@ class Message(Document):
 class MessagePDF(Message):
     fichier = models.FileField(upload_to='msg_pdf/')
     important = models.BooleanField(default=False,help_text="Si le message est important, alors il sera prioritaire sur les veilles techno")
+    type = models.IntegerField()
 
     def clean(self):
         if self.dateDebut >= self.dateFin:
