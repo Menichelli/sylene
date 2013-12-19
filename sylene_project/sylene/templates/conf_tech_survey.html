@@ -1,28 +1,43 @@
 {% extends "base.html" %}
 {% block titre %}Sylene | Confirmation des ajouts des documents de veilles{% endblock %}
 {% block body %}
-<a href="/userpanel/" xmlns="http://www.w3.org/1999/html"><h1>Confirmation des ajouts des documents de veilles</h1></a>
-<div id="page">
 
-    {% if fichiers_acceptes|length_is:"0" %}
-    {% else %}
-    <div id="filesAccepted">
-        <h2>Les fichiers suivants ont été enregistrés :</h2><br/>
-        {% for f in fichiers_acceptes %}
-            <dd/>{{ f.name }}<br/>
-        {% endfor %}
-    </div>
-    {% endif %}
 
-    {% if fichiers_refuses|length_is:"0" %}
-    {% else %}
-    <div id="filesRefused">
-        <h2>Les fichiers suivants ont été refusés :</h2><br/>
-        {% for f in fichiers_refuses %}
-            <dd/>{{ f.name }}<br/>
-        {% endfor %}
-    </div>
-    {% endif %}
+<div class="container">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <h3>Ajout de documents de veille</h3>
+                {% if fichiers_acceptes|length_is:"0" %}
+                 {% else %}
+                <p>Les fichiers suivants ont été enregistrés :</p>
+                <ol>
+                    {% for f in fichiers_acceptes %}
+                    <li>{{ f.name }}</li>
+                    {% endfor %}
+                </ol>
+                {% endif %}
+            {% if fichiers_refuses|length_is:"0" %}
+                 {% else %}
+                <p>Les fichiers suivants ont été refusés :</p>
+                <ol>
+                    {% for f in fichiers_refuses %}
+                    <li>{{ f.name }}</li>
+                    {% endfor %}
+                </ol>
+                {% endif %}
+                <button type="button" class="btn btn-default btn-lg btn-block" onclick="location.href='/userpanel/'">
+                    Revenir
+                </button>
+            </div>
+            <div class="col-md-4"></div>
+          </div> <!-- /row -->
+        </div> <!-- /panel-body -->
+      </div> <!-- /panel -->
+    </div> <!-- /container -->
 
-</div>
+
+
 {% endblock %}

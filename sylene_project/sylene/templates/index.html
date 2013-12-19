@@ -1,30 +1,73 @@
 {% extends "base.html" %}
 {% block titre %}Sylene | Accueil{% endblock %}
 {% block body %}
-<a href="/" ><h1>Sylene</h1></a>
-<div id="page">
-    <button id="bViewer" type="button" onclick="location.href='/nyi/'">Accèder directement à la Visionneuse</button><br/>
 
-    {% if not logged %}
-    <button id="bApp" type="button" onclick="toggle_visibility('formulaire','bApp');">Connectez vous pour accèder à l'application</button>
-
-    <div id="formulaire">
-        <form action="/login/" method="post">{% csrf_token %}
-            <table>
-                <tr>
-                    <th>Nom d'utilisateur</th> <th><input type="text" name="username" size="40" /><br /></th>
-                </tr>
-                <tr>
-                    <th>Mot de passe</th> <th><input type="password" name="password" size="40" /><br /></th>
-                </tr>
-                <tr>
-                    <th></th><th id="connexion"><input type="submit" value="Connexion" /><br /></th>
-                </tr>
-            </table>
-        </form>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Sylène</h1>
+        <p>Bienvenue sur l'interface d'affichage Sylène ! Ici vous pourrez afficher directement la visionneuse, ou bien accéder à l'application pour envoyer des informations à afficher.</p>
+      </div>
     </div>
-    {% else %}
-    <button type="button" onclick="location.href='/userpanel/'">Cliquez ici pour accèder au panneau utilisateur</button>
-    {% endif %}
-</div>
+
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-primary btn-lg btn-block">
+                <span class="glyphicon glyphicon-eye-open"></span> Accéder à la visionneuse
+              </button>
+              <p></p>
+                {% if not logged %}
+              <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#loginModal">
+                <span class="glyphicon glyphicon-edit"></span> Accéder à l'application
+              </button>
+                 {% endif %}
+                {% if logged %}
+              <button type="button" class="btn btn-primary btn-lg btn-block" onclick="location.href='/userpanel/'">
+                <span class="glyphicon glyphicon-edit"></span> Accéder à l'application
+              </button>
+                 {% endif %}
+            </div>
+            <div class="col-md-4"></div>
+          </div> <!-- /row -->
+        </div> <!-- /panel-body -->
+      </div> <!-- /panel -->
+    </div> <!-- /container -->
+
+    <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Connectez-vous !</h4>
+        </div>
+        <div class="modal-body">
+          <form action="/login/" method="post" class="form-horizontal" role="form">{% csrf_token %}
+            <div class="form-group">
+              <label for="username" class="col-sm-3 control-label">Identifiant</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="username" id="username" placeholder="Identifiant">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-3 control-label">Mot de passe</label>
+              <div class="col-sm-9">
+                <input type="password" class="form-control" name="password" id="inputPassword3" placeholder="Mot de passe">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-9 col-sm-3">
+                <button type="submit" class="btn btn-default">Se connecter</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
 {% endblock %}

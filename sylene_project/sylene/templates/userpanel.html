@@ -1,12 +1,121 @@
 {% extends "base.html" %}
 {% block titre %}Sylene | Accueil{% endblock %}
 {% block body %}
-<a href="/userpanel/" ><h1>Panneau de l'utilisateur</h1></a>
-<div id="page">
-    <button type="button" onclick="location.href='/'">Retourner à l'accueil</button><br/>
-    <button type="button" onclick="location.href='/userpanel/add_tech_survey/'">Poster des documents de Veille Technologique</button><br/>
-    <button type="button" onclick="location.href='/nyi/'">Poster un message</button><br/>
-    <button type="button" onclick="location.href='/userpanel/add_user/'">Créer un compte</button><br/>
-    <button type="button" onclick="location.href='/admin/'">Accèder à l'interface SuperAdmin</button>
-</div>
+
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-body">
+        <h3 class="text-center">Panneau de l'utilisateur</h3>
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#add_tech_survey">
+            Poster des documents de veille
+          </button>
+            <p></p>
+          <button type="button" class="btn btn-primary btn-lg btn-block" onclick="location.href='/nyi/'">
+            </span> Poster une information
+          </button>
+            <p></p>
+          <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#create_user">
+            Créer un compte
+          </button>
+            <p></p>
+          <button type="button" class="btn btn-default btn-lg btn-block" onclick="location.href='/admin/'">
+            Mode super-admin
+          </button>
+          <p></p>
+          <button type="button" class="btn btn-default btn-lg btn-block" onclick="location.href='/'">
+            Retourner à l'accueil
+          </button>
+
+        </div>
+        <div class="col-md-4"></div>
+      </div> <!-- /row -->
+    </div> <!-- /panel-body -->
+  </div> <!-- /panel -->
+</div> <!-- /container -->
+
+<!-- Add-tech-survey Modal -->
+  <div class="modal fade" id="add_tech_survey" tabindex="-1" role="dialog" aria-labelledby="Envoi de documents" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Ajout de documents de veille technologique</h4>
+        </div>
+        <div class="modal-body">
+          <form action="/userpanel/conf_tech_survey/" method="post" enctype="multipart/form-data" class="form-horizontal" role="form">{% csrf_token %}
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="file" name="doc" multiple accept="application/pdf">
+                </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-9 col-sm-3">
+                <button type="submit" class="btn btn-default">Envoyer</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+ <!-- create_user Modal -->
+  <div class="modal fade" id="create_user" tabindex="-1" role="dialog" aria-labelledby="Création de compte" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Création d'un compte</h4>
+        </div>
+        <div class="modal-body">
+          <form action="/userpanel/create_user/" method="post" enctype="multipart/form-data" class="form-horizontal" role="form" AUTOCOMPLETE=OFF>{% csrf_token %}
+            <div class="form-group">
+              <label for="username" class="col-sm-3 control-label">Nom d'utilisateur</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="username" id="username" placeholder="Nom d'utilisateur">
+              </div>
+            </div>
+              <div class="form-group">
+              <label for="name" class="col-sm-3 control-label">Nom de famille</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Nom de famille">
+              </div>
+            </div>
+              <div class="form-group">
+              <label for="first_name" class="col-sm-3 control-label">Prénom</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="first_name" id="fist_name" placeholder="Identifiant">
+              </div>
+            </div>
+              <div class="form-group">
+              <label for="email" class="col-sm-3 control-label">Adresse mail</label>
+              <div class="col-sm-9">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Adresse mail">
+              </div>
+            </div>
+              <div class="form-group">
+              <label for="pxd1" class="col-sm-3 control-label">Mot de passe</label>
+              <div class="col-sm-9">
+                <input type="password" class="form-control" name="pwd1" id="pwd1" placeholder="Mot de passe" required onchange="form.pwd2.pattern = this.value;">
+              </div>
+            </div>
+              <div class="form-group">
+              <label for="pwd2" class="col-sm-3 control-label">Confirmez le mot de passe</label>
+              <div class="col-sm-9">
+                <input type="password" class="form-control" name="pwd2" id="pwd2" placeholder="Confirmez le mot de passe">
+              </div>
+             </div>
+            <div class="form-group">
+              <div class="col-sm-offset-9 col-sm-3">
+                <button type="submit" class="btn btn-default">Envoyer</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 {% endblock %}
