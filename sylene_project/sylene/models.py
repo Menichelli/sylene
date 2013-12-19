@@ -16,6 +16,7 @@ class DocumentVeille(Document,models.Model):
     prenom = models.CharField(max_length=50)
     actif = models.BooleanField(default=True,help_text="Seul les documents actifs seront affiches sur le Viewer")
     fichier = models.FileField(upload_to='document_veille/%Y_%m')
+    lien_image = models.CharField(max_length=500,help_text="Le lien vers l'image correspondate")
 
     def clean(self):
         if not self.fichier.name.endswith('.pdf'):
@@ -25,7 +26,6 @@ class DocumentVeille(Document,models.Model):
         verbose_name_plural = "Documents Veilles"
 
 class Message(Document):
-    description = models.CharField(max_length=200,blank=True,help_text="Une courte description qui sera simplement stockee")
     dateDebut = models.DateTimeField('Date de debut')
     dateFin = models.DateTimeField('Date de fin')
 

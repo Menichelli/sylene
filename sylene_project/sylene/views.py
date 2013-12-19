@@ -9,6 +9,7 @@ from django.core.files import File
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 from django.core.context_processors import csrf
+from wand.image import Image
 
 from models import *
 from forms import DocumentVeilleForm
@@ -86,13 +87,19 @@ def conf_tech_survey(request):
     fichiers_refuses = []
     for fichier in request.FILES.getlist('doc'):
         try :
-            #TODO: Split_du_nom_de_fichier
-            dv = DocumentVeille(nom="nom",prenom="prenom",fichier=fichier)
+            dv = DocumentVeille(nom="todo",prenom="todo",fichier=fichier)
             dv.clean()
             dv.save()
             fichiers_acceptes.append(fichier)
-        except Exception:
+        except Exception as e:
+            print(e)
             fichiers_refuses.append(fichier)
+        try :
+            with Image(filename="/var/resources/"+dv.fichier.name+"[0]") as img:
+                img.save(filename="/var/resources/"+dv.fichier.name+".jpg")
+                dv.lien_image("/var/resources/"+dv.fichier.name+".jpg")
+        except Exception as e:
+            print(e)
     request.FILES.clear()
     return render_to_response('conf_tech_survey.html', {'logged' : True, 'username' : get_user(request).username, 'fichiers_acceptes' : fichiers_acceptes, 'fichiers_refuses' : fichiers_refuses}, context_instance=RequestContext(request))
 
