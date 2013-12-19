@@ -34,6 +34,9 @@ def viewer(request):
     found = False #si on a trouve quelque chose a afficher
     message = ""
     doc_url = ""
+    msgSimple = MessageSimple
+    msgPDF = MessagePDF
+    dv = DocumentVeille
 
     #on recupere un message simple s'il y en a un a afficher
     qs = MessageSimple.objects.all().exclude(dateFin__lt=datetime.datetime.now, dateDebut__gt=datetime.datetime.now()).order_by("dernier_visionnage")
