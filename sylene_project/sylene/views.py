@@ -78,7 +78,7 @@ def viewer(request):
             dv = tmp2[0]
             dv.dernier_visionnage = datetime.datetime.now()
             dv.save()
-            doc_url = msgPDF.lien_image
+            doc_url = dv.lien_image
             found = True
     if found==True:
         return render_to_response('viewer.html', {'image_url' : doc_url, 'message' : message}, context_instance=RequestContext(request))
