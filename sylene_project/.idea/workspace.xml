@@ -35,7 +35,7 @@
       <file leaf-file-name="viewer.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sylene/templates/viewer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="59" selection-start="220" selection-end="220" vertical-scroll-proportion="0.1590909" vertical-offset="0" max-vertical-offset="660">
+            <state line="6" column="4" selection-start="124" selection-end="124" vertical-scroll-proportion="0.13636364" vertical-offset="0" max-vertical-offset="660">
               <folding />
             </state>
           </provider>
@@ -93,8 +93,8 @@
         <option value="$PROJECT_DIR$/sylene/static/js/bootstrap-datepicker.js" />
         <option value="$PROJECT_DIR$/sylene/templates/base.html" />
         <option value="$PROJECT_DIR$/sylene/static/css/li-scroller.css" />
-        <option value="$PROJECT_DIR$/sylene/templates/viewer.html" />
         <option value="$PROJECT_DIR$/sylene/static/js/jquery.li-scroller.1.0.js" />
+        <option value="$PROJECT_DIR$/sylene/templates/viewer.html" />
       </list>
     </option>
   </component>
@@ -699,13 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sylene/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="58" selection-start="2101" selection-end="2101" vertical-scroll-proportion="-22.173914" vertical-offset="165" max-vertical-offset="825">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sylene/static/css/li-scroller.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="10" selection-start="446" selection-end="446" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
@@ -729,9 +722,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sylene/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="58" selection-start="2101" selection-end="2101" vertical-scroll-proportion="-22.173914" vertical-offset="165" max-vertical-offset="825">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sylene/templates/viewer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="59" selection-start="220" selection-end="220" vertical-scroll-proportion="0.1590909" vertical-offset="0" max-vertical-offset="660">
+        <state line="6" column="4" selection-start="124" selection-end="124" vertical-scroll-proportion="0.13636364" vertical-offset="0" max-vertical-offset="660">
           <folding />
         </state>
       </provider>
