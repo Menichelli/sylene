@@ -81,7 +81,7 @@ def viewer(request):
             doc_url = dv.lien_image
             found = True
     if found==True:
-        return render_to_response('viewer.html', {'image_url' : doc_url, 'message' : message}, context_instance=RequestContext(request))
+        return render_to_response('viewer.html', {'image_url' : doc_url, 'message' : message, 'message_len' : len(message)}, context_instance=RequestContext(request))
     else:
         return HttpResponse(status=500)
 
