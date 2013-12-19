@@ -18,7 +18,7 @@ from datetime import datetime, timedelta
 from models import *
 
 #Called by: /
-#
+#L'accueil de l'application
 def home(request):
     if request.user.is_authenticated():
         logged = True
@@ -29,7 +29,7 @@ def home(request):
         return render_to_response('index.html', {'logged' : logged}, context_instance=RequestContext(request))
 
 #Called by: /viewer/
-#Le viewer
+#Le Viewer
 def viewer(request):
     found = False #si on a trouve quelque chose a afficher
     message = ""
@@ -151,6 +151,41 @@ def conf_tech_survey(request):
     request.FILES.clear()
     return render_to_response('conf_tech_survey.html', {'logged' : True, 'username' : get_user(request).username, 'fichiers_acceptes' : fichiers_acceptes, 'fichiers_refuses' : fichiers_refuses}, context_instance=RequestContext(request))
 
+#Called by: ???
+#Permet d'ajouter un message simple
+# A COMPLETER
+@login_required
+def add_message_simple(request):
+    dateDebut = request.POST['dateDebut']
+    dateFin = request.POST['dateFin']
+    message = request.POST['message']
+    ms = MessageSimple(dateDebut=dateDebut,dateFin=dateFin,message=message)
+    ms.clean()
+    ms.save()
+
+#Called by: ???
+#Permet d'ajouter un message type PDF
+# A COMPLETER
+@login_required
+def add_message_pdf(request):
+    dateDebut = request.POST['dateDebut']
+    dateFin = request.POST['dateFin']
+    frequence = request.POST['frequence']
+    fichier = request.FILES.getlist('doc')[0]
+    try:
+        mpdf = MessagePDF(dateDebut=dateDebut,dateFin=dateFin,fichier=fichier,frequence=frequence)
+        mpdf.clean()
+        mpdf.save()
+        with Image(filename="/var/resources/"+mpdf.fichier.name+"[0]",resolution=128) as img:
+                img.format = 'png'
+                img.save(filename="/var/resources/"+mpdf.fichier.name+".png")
+                mpdf.lien_image = "/media/"+mpdf.fichier.name+".png"
+        mpdf.clean()
+        mpdf.save()
+    except Exception as e:
+        print(e)
+    request.FILES.clear()
+
 #Called by: login_/
 #Permet de logger l'utilisateur
 def login_(request):
@@ -174,4 +209,4 @@ def logout_(request):
 #Called by: /nyi/
 #Not Yet Implemented
 def nyi(request):
-    return render_to_response('nyi.html', {}, context_instance=RequestContext(request))
+    return HttpResponse(status=501)

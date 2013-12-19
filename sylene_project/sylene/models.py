@@ -41,10 +41,6 @@ class MessagePDF(Message):
     lien_image = models.CharField(max_length=500,help_text="Le lien vers l'image correspondante")
     frequence = models.IntegerField() # 1 pour toutes les 30min || 2 pour toutes les heures || possiblement extensible, voir views
 
-    def clean(self):
-        if self.dateDebut >= self.dateFin:
-            raise ValidationError('La date de fin ne peut etre anterieur a la date de debut.')
-
     class Meta:
         verbose_name_plural = "Messages PDF"
 
