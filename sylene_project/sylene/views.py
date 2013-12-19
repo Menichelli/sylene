@@ -62,6 +62,18 @@ def add_user(request):
     else:
         return HttpResponseForbidden
 
+
+#Called by: /userpanel/add_info/
+#Permet d'ajouter une information à afficher
+@login_required
+def add_info(request):
+    if request.user.is_authenticated():
+        logged = True
+        username = get_user(request).username
+        return render_to_response('add_info.html', {'logged' : logged, 'username' : username}, context_instance=RequestContext(request))
+    else:
+        return HttpResponseForbidden
+
 #Called by: /userpanel/create_user/
 #Crée le compte utilisateur à partir du formulaire /userpanel/add_user/
 @login_required
