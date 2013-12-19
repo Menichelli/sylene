@@ -1,14 +1,13 @@
-{% extends "base.html" %}
+{% extends "base-viewer.html" %}
 {% block titre %}Sylene | Viewer{% endblock %}
 {% block body %}
-{{ message }}
-<img src="{{ image_url }}">
 
-    {% if message_len != 0 %}
+{% if message_len != 0 %}
         <ul id="texteDefilant">
-            <li>Alerte ! Ce projet est à livrer très bientôt !!</li>
-            <!-- eccetera -->
+            <li>{{ message }}</li>
         </ul>
-    {% endif %}
+{% endif %}
+
+        <img src="{{ image_url }}" class="img-responsive" style="margin:0">
 
 {% endblock %}

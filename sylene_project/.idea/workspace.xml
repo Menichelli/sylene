@@ -23,10 +23,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sylene/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="108" selection-start="780" selection-end="780" vertical-scroll-proportion="-11.73913" vertical-offset="0" max-vertical-offset="1170">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sylene/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="58" selection-start="2101" selection-end="2101" vertical-scroll-proportion="-22.173914" vertical-offset="165" max-vertical-offset="825">
+            <state line="22" column="73" selection-start="1042" selection-end="1117" vertical-scroll-proportion="-14.347826" vertical-offset="0" max-vertical-offset="825">
               <folding />
             </state>
           </provider>
@@ -35,7 +44,18 @@
       <file leaf-file-name="viewer.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sylene/templates/viewer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="4" selection-start="124" selection-end="124" vertical-scroll-proportion="0.13636364" vertical-offset="0" max-vertical-offset="660">
+            <state line="6" column="34" selection-start="190" selection-end="190" vertical-scroll-proportion="0.13636364" vertical-offset="0" max-vertical-offset="660">
+              <folding>
+                <element signature="e#276#292#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base-viewer.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sylene/templates/base-viewer.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="82" selection-start="692" selection-end="692" vertical-scroll-proportion="-8.478261" vertical-offset="0" max-vertical-offset="555">
               <folding />
             </state>
           </provider>
@@ -56,6 +76,24 @@
         <entry file="file://$PROJECT_DIR$/sylene/static/css/li-scroller.css">
           <provider selected="true" editor-type-id="text-editor">
             <state line="20" column="10" selection-start="446" selection-end="446" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="conf_tech_survey.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sylene/templates/conf_tech_survey.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="27" selection-start="471" selection-end="471" vertical-scroll-proportion="-6.869565" vertical-offset="37" max-vertical-offset="720">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sylene/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="0" selection-start="580" selection-end="580" vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="3495">
               <folding />
             </state>
           </provider>
@@ -94,6 +132,7 @@
         <option value="$PROJECT_DIR$/sylene/templates/base.html" />
         <option value="$PROJECT_DIR$/sylene/static/css/li-scroller.css" />
         <option value="$PROJECT_DIR$/sylene/static/js/jquery.li-scroller.1.0.js" />
+        <option value="$PROJECT_DIR$/sylene/templates/base-viewer.html" />
         <option value="$PROJECT_DIR$/sylene/templates/viewer.html" />
       </list>
     </option>
@@ -103,6 +142,46 @@
     <option name="y" value="-123" />
     <option name="width" value="1920" />
     <option name="height" value="1080" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Control flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript function metricsJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript validity issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsJavaScript</id>
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+          <State>
+            <id>SQL</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Buildout</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -313,7 +392,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="com.jetbrains.django.DjangoModulesConfigurable" />
+    <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="dynamic.classpath" value="false" />
@@ -586,16 +665,16 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18676628" sideWeight="0.740625" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.259375" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.259375" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.259375" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -618,31 +697,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sylene/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="36" selection-start="4694" selection-end="4694" vertical-scroll-proportion="0.0" vertical-offset="1533" max-vertical-offset="3495">
-          <folding>
-            <element signature="e#26#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sylene_project/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="67" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sylene/templates/conf_tech_survey.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="27" selection-start="471" selection-end="471" vertical-scroll-proportion="-8.478261" vertical-offset="0" max-vertical-offset="720">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sylene/static/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="19" selection-start="451" selection-end="451" vertical-scroll-proportion="0.35714287" vertical-offset="65" max-vertical-offset="765">
@@ -674,13 +728,6 @@
     <entry file="file://$PROJECT_DIR$/sylene/templates/userpanel.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="85" column="18" selection-start="3324" selection-end="3947" vertical-scroll-proportion="-13.782609" vertical-offset="958" max-vertical-offset="1890">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sylene/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="108" selection-start="780" selection-end="780" vertical-scroll-proportion="-6.6086955" vertical-offset="118" max-vertical-offset="1170">
           <folding />
         </state>
       </provider>
@@ -722,17 +769,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sylene/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="580" selection-end="580" vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="3495">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sylene/templates/conf_tech_survey.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="27" selection-start="471" selection-end="471" vertical-scroll-proportion="-6.869565" vertical-offset="37" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sylene/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="108" selection-start="780" selection-end="780" vertical-scroll-proportion="-11.73913" vertical-offset="0" max-vertical-offset="1170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sylene/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="58" selection-start="2101" selection-end="2101" vertical-scroll-proportion="-22.173914" vertical-offset="165" max-vertical-offset="825">
+        <state line="22" column="73" selection-start="1042" selection-end="1117" vertical-scroll-proportion="-14.347826" vertical-offset="0" max-vertical-offset="825">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sylene/templates/base-viewer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="82" selection-start="692" selection-end="692" vertical-scroll-proportion="-8.478261" vertical-offset="0" max-vertical-offset="555">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sylene/templates/viewer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="4" selection-start="124" selection-end="124" vertical-scroll-proportion="0.13636364" vertical-offset="0" max-vertical-offset="660">
-          <folding />
+        <state line="6" column="34" selection-start="190" selection-end="190" vertical-scroll-proportion="0.13636364" vertical-offset="0" max-vertical-offset="660">
+          <folding>
+            <element signature="e#276#292#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
