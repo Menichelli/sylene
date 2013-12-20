@@ -46,7 +46,8 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="8" column="11" selection-start="216" selection-end="216" vertical-scroll-proportion="-5.2173915" vertical-offset="0" max-vertical-offset="270">
               <folding>
-                <element signature="e#276#292#0" expanded="true" />
+                <marker date="1387497375000" expanded="true" signature="154:203" placeholder="..." />
+                <marker date="1387497375000" expanded="true" signature="283:291" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -64,7 +65,7 @@
       <file leaf-file-name="add_info.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sylene/templates/add_info.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="34" selection-start="5336" selection-end="5336" vertical-scroll-proportion="0.59090906" vertical-offset="960" max-vertical-offset="1815">
+            <state line="52" column="90" selection-start="3001" selection-end="3001" vertical-scroll-proportion="0.6818182" vertical-offset="330" max-vertical-offset="1935">
               <folding />
             </state>
           </provider>
@@ -807,7 +808,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="11" selection-start="216" selection-end="216" vertical-scroll-proportion="-5.2173915" vertical-offset="0" max-vertical-offset="270">
           <folding>
-            <element signature="e#276#292#0" expanded="true" />
+            <marker date="1387497375000" expanded="true" signature="154:203" placeholder="..." />
+            <marker date="1387497375000" expanded="true" signature="283:291" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -821,7 +823,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sylene/templates/add_info.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="34" selection-start="5336" selection-end="5336" vertical-scroll-proportion="0.59090906" vertical-offset="960" max-vertical-offset="1815">
+        <state line="52" column="90" selection-start="3001" selection-end="3001" vertical-scroll-proportion="0.6818182" vertical-offset="330" max-vertical-offset="1935">
           <folding />
         </state>
       </provider>
