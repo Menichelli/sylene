@@ -39,36 +39,46 @@ def viewer(request):
     dv = DocumentVeille
 
     #on recupere un message simple s'il y en a un a afficher
-    qs = MessageSimple.objects.all().exclude(dateFin__lt=datetime.datetime.now, dateDebut__gt=datetime.datetime.now()).order_by("dernier_visionnage")
+    qs = MessageSimple.objects.all().exclude(dateFin__lte=datetime.datetime.now, dateDebut__gte=datetime.datetime.now()).order_by("dernier_visionnage")
     if qs.count()!=0:
         msgSimple = qs[0]
         msgSimple.dernier_visionnage = datetime.datetime.now()
         msgSimple.save()
         message = msgSimple.message
 
-    #un message pdf toutes les 30min
-    qs = MessagePDF.objects.all().exclude(dateFin__lt=datetime.datetime.now(), dateDebut__gt=datetime.datetime.now()).filter(frequence__exact=1).order_by("dernier_visionnage")
+    #un message pdf permanent
+    qs = MessagePDF.objects.all().exclude(dateFin__lte=datetime.datetime.now(), dateDebut__gte=datetime.datetime.now()).filter(frequence__exact=0).order_by("dernier_visionnage")
     if qs.count()!=0:
         msgPDF = qs[0]
-        if msgPDF.dernier_visionnage > datetime.timedelta(minutes=30): # frequence 1: toutes les 30 minutes
-            msgPDF.dernier_visionnage = datetime.datetime.now()
-            msgPDF.save()
-            doc_url = msgPDF.lien_image
-            found = True
+        msgPDF.dernier_visionnage = datetime.datetime.now()
+        msgPDF.save()
+        doc_url = msgPDF.lien_image
+        found = True
+
+    #un message pdf toutes les 30min
+    if found == False:
+        qs = MessagePDF.objects.all().exclude(dateFin__lte=datetime.datetime.now(), dateDebut__gte=datetime.datetime.now()).filter(frequence__exact=1).order_by("dernier_visionnage")
+        if qs.count()!=0:
+            msgPDF = qs[0]
+            if msgPDF.dernier_visionnage < (datetime.datetime.now()-datetime.timedelta(minutes=30)): # frequence 1: toutes les 30 minutes
+                msgPDF.dernier_visionnage = datetime.datetime.now()
+                msgPDF.save()
+                doc_url = msgPDF.lien_image
+                found = True
 
     #un message pdf toutes les heures
-    if found==False:
+    if found == False:
         qs = MessagePDF.objects.all().exclude(dateFin__lt=datetime.datetime.now(), dateDebut__gt=datetime.datetime.now()).filter(frequence__exact=2).order_by("dernier_visionnage")
         if qs.count()!=0:
             msgPDF = qs[0]
-            if msgPDF.dernier_visionnage > datetime.timedelta(hours=1): # frequence 2: toutes les heures
+            if msgPDF.dernier_visionnage < (datetime.datetime.now()-datetime.timedelta(hours=1)): # frequence 2: toutes les heures
                 msgPDF.dernier_visionnage = datetime.datetime.now()
                 msgPDF.save()
                 doc_url = msgPDF.lien_image
                 found = True
 
     #si on a toujours rien trouve, on va chercher une veille techno
-    if found==False:
+    if found == False:
         listDV = DocumentVeille.objects.all().order_by("-date_publiee")[:settings.NB_ETUDIANT]
         tmp1 = []
         for e in listDV:
@@ -169,19 +179,21 @@ def conf_tech_survey(request):
     request.FILES.clear()
     return render_to_response('conf_tech_survey.html', {'logged' : True, 'username' : get_user(request).username, 'fichiers_acceptes' : fichiers_acceptes, 'fichiers_refuses' : fichiers_refuses}, context_instance=RequestContext(request))
 
-#Called by: ???
+#Called by: /add_info/add_message_simple/
 #Permet d'ajouter un message simple
-# A COMPLETER
 @login_required
 def add_message_simple(request):
-    dateDebut = request.POST['dateDebut']
-    dateFin = request.POST['dateFin']
     message = request.POST['message']
+    tabDebut = request.POST['dateDebut'].split("/")
+    tabFin = request.POST['dateFin'].split("/")
+    dateDebut = datetime.date(int(tabDebut[2]),int(tabDebut[1]),int(tabDebut[0]))
+    dateFin = datetime.date(int(tabFin[2]),int(tabFin[1]),int(tabFin[0]))
     ms = MessageSimple(dateDebut=dateDebut,dateFin=dateFin,message=message)
     ms.clean()
     ms.save()
+    return HttpResponseRedirect("/userpanel/")
 
-#Called by: ???
+#Called by: /add_info/add_message_pdf/
 #Permet d'ajouter un message type PDF
 @login_required
 def add_message_pdf(request):
