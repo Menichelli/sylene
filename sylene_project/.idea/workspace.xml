@@ -64,8 +64,12 @@
       <file leaf-file-name="add_info.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sylene/templates/add_info.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="90" selection-start="3001" selection-end="3001" vertical-scroll-proportion="-19.565218" vertical-offset="330" max-vertical-offset="1935">
-              <folding />
+            <state line="47" column="90" selection-start="2704" selection-end="2704" vertical-scroll-proportion="-19.565218" vertical-offset="255" max-vertical-offset="1860">
+              <folding>
+                <marker date="1387500878000" expanded="true" signature="1055:1456" placeholder="..." />
+                <marker date="1387500878000" expanded="true" signature="1214:1421" placeholder="..." />
+                <marker date="1387500878000" expanded="true" signature="2181:2337" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,7 +77,7 @@
       <file leaf-file-name="base-viewer.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sylene/templates/base-viewer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="48" selection-start="1093" selection-end="1093" vertical-scroll-proportion="0.52272725" vertical-offset="0" max-vertical-offset="660">
+            <state line="24" column="34" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.54545456" vertical-offset="0" max-vertical-offset="660">
               <folding />
             </state>
           </provider>
@@ -102,7 +106,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sylene/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="603" selection-end="603" vertical-scroll-proportion="0.0" vertical-offset="855" max-vertical-offset="3600">
+            <state line="29" column="0" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="3780">
               <folding>
                 <element signature="e#26#51#0" expanded="true" />
               </folding>
@@ -768,7 +772,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sylene/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="603" selection-end="603" vertical-scroll-proportion="0.0" vertical-offset="855" max-vertical-offset="3600">
+        <state line="29" column="0" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="3780">
           <folding>
             <element signature="e#26#51#0" expanded="true" />
           </folding>
@@ -791,8 +795,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sylene/templates/add_info.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="90" selection-start="3001" selection-end="3001" vertical-scroll-proportion="-19.565218" vertical-offset="330" max-vertical-offset="1935">
-          <folding />
+        <state line="47" column="90" selection-start="2704" selection-end="2704" vertical-scroll-proportion="-19.565218" vertical-offset="255" max-vertical-offset="1860">
+          <folding>
+            <marker date="1387500878000" expanded="true" signature="1055:1456" placeholder="..." />
+            <marker date="1387500878000" expanded="true" signature="1214:1421" placeholder="..." />
+            <marker date="1387500878000" expanded="true" signature="2181:2337" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -821,7 +829,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sylene/templates/base-viewer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="48" selection-start="1093" selection-end="1093" vertical-scroll-proportion="0.52272725" vertical-offset="0" max-vertical-offset="660">
+        <state line="24" column="34" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.54545456" vertical-offset="0" max-vertical-offset="660">
           <folding />
         </state>
       </provider>
