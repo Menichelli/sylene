@@ -15,11 +15,14 @@
         <link rel="stylesheet" href="{{ STATIC_URL }}css/li-scroller.css">
 
         <script src="{{ STATIC_URL }}js/vendor/modernizr-2.6.2.min.js"></script>
+        <script type="text/JavaScript">
+            function timedRefresh(timeoutPeriod) {
+            setTimeout("location.reload(true);",timeoutPeriod);
+        }
+        </script>
     </head>
-    <body>
-<div id="wrap">
+    <body onload="Javascript:timedRefresh(180000)">
     {% block body %}{% endblock %}
-</div>
 
     <script src="{{ STATIC_URL }}//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
