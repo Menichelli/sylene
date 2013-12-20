@@ -48,12 +48,12 @@ def viewer(request):
 
     #un message pdf permanent
     qs = MessagePDF.objects.all().exclude(dateFin__lte=datetime.datetime.now(), dateDebut__gte=datetime.datetime.now()).filter(frequence__exact=0).order_by("dernier_visionnage")
-        if qs.count()!=0:
-            msgPDF = qs[0]
-            msgPDF.dernier_visionnage = datetime.datetime.now()
-            msgPDF.save()
-            doc_url = msgPDF.lien_image
-            found = True
+    if qs.count()!=0:
+        msgPDF = qs[0]
+        msgPDF.dernier_visionnage = datetime.datetime.now()
+        msgPDF.save()
+        doc_url = msgPDF.lien_image
+        found = True
 
     #un message pdf toutes les 30min
     if found == False:
