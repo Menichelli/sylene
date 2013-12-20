@@ -84,7 +84,6 @@ def viewer(request):
             doc_url = dv.lien_image
             found = True
     if found==True:
-        message = "coucou je fais un test"
         return render_to_response('viewer.html', {'image_url' : doc_url, 'message' : message, 'message_len' : len(message)}, context_instance=RequestContext(request))
     else:
         return HttpResponse(status=500)
@@ -184,26 +183,30 @@ def add_message_simple(request):
 
 #Called by: ???
 #Permet d'ajouter un message type PDF
-# A COMPLETER
 @login_required
 def add_message_pdf(request):
-    dateDebut = request.POST['dateDebut']
-    dateFin = request.POST['dateFin']
+    tabDebut = request.POST['dateDebut'].split("/")
+    tabFin = request.POST['dateFin'].split("/")
     frequence = request.POST['frequence']
     fichier = request.FILES.getlist('doc')[0]
+
+    dateDebut = datetime.date(int(tabDebut[2]),int(tabDebut[1]),int(tabDebut[0]))
+    dateFin = datetime.date(int(tabFin[2]),int(tabFin[1]),int(tabFin[0]))
+
     try:
         mpdf = MessagePDF(dateDebut=dateDebut,dateFin=dateFin,fichier=fichier,frequence=frequence)
         mpdf.clean()
         mpdf.save()
         with Image(filename="/var/resources/"+mpdf.fichier.name+"[0]",resolution=128) as img:
-                img.format = 'png'
-                img.save(filename="/var/resources/"+mpdf.fichier.name+".png")
-                mpdf.lien_image = "/media/"+mpdf.fichier.name+".png"
+            img.format = 'png'
+            img.save(filename="/var/resources/"+mpdf.fichier.name+".png")
+            mpdf.lien_image = "/media/"+mpdf.fichier.name+".png"
         mpdf.clean()
         mpdf.save()
     except Exception as e:
         print(e)
     request.FILES.clear()
+    return HttpResponseRedirect("/userpanel/")
 
 #Called by: login_/
 #Permet de logger l'utilisateur

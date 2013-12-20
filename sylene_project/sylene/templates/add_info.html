@@ -21,7 +21,7 @@
                     <div id="collapseOne" class="panel-collapse collapse in">
                       <div class="panel-body">
 
-                        <form action="/userpanel/XCXXXXXXXX/" method="post" enctype="multipart/form-data" class="form-horizontal" role="form" AUTOCOMPLETE=OFF>{% csrf_token %}
+                        <form action="/userpanel/add_info/add_message_pdf/" method="post" enctype="multipart/form-data" class="form-horizontal" role="form" AUTOCOMPLETE=OFF>{% csrf_token %}
 
                             <div class="form-group">
                               <label for="dateDebut" class="col-sm-3 control-label">Date de début</label>
@@ -39,10 +39,10 @@
                               <label for="frequence" class="col-sm-3 control-label">Fréquence d'affichage</label>
                               <div class="col-sm-9">
                                 <label class="radio-inline">
-                                  <input type="radio" name="frequence" id="frequence1" value="frequence1" checked> toutes les heures
+                                  <input type="radio" name="frequence" id="2" value="2" checked> toutes les heures
                                 </label>
                                   <label class="radio-inline">
-                                  <input type="radio" name="frequence" id="frequence2" value="frequence2"> toutes les demi-heures
+                                  <input type="radio" name="frequence" id="1" value="1"> toutes les demi-heures
                                 </label>
                               </div>
                             </div>
@@ -70,7 +70,7 @@
                     </div>
                     <div id="collapseTwo" class="panel-collapse collapse">
                       <div class="panel-body">
-                        <form action="/userpanel/XCXXXXXXXX/" method="post" enctype="multipart/form-data" class="form-horizontal" role="form" AUTOCOMPLETE=OFF>{% csrf_token %}
+                        <form action="/userpanel/add_info/add_message_simple/" method="post" enctype="multipart/form-data" class="form-horizontal" role="form" AUTOCOMPLETE=OFF>{% csrf_token %}
                             <div class="form-group">
                               <label for="message" class="col-sm-3 control-label">Message</label>
                               <div class="col-sm-9">
@@ -93,10 +93,10 @@
                                   <label for="frequence" class="col-sm-3 control-label">Fréquence d'affichage</label>
                                   <div class="col-sm-9">
                                     <label class="radio-inline">
-                                      <input type="radio" name="frequence" id="frequence1" value="frequence1" checked> toutes les heures
+                                      <input type="radio" name="frequence" id="2" value="2" checked> toutes les heures
                                     </label>
                                       <label class="radio-inline">
-                                      <input type="radio" name="frequence" id="frequence2" value="frequence2"> toutes les demi-heures
+                                      <input type="radio" name="frequence" id="1" value="1"> toutes les demi-heures
                                     </label>
                                   </div>
                                 </div>
