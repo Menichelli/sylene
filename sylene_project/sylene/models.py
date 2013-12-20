@@ -68,7 +68,7 @@ class MessagePDF(Message):
     """
     fichier = models.FileField(upload_to='msg_pdf/')
     lien_image = models.CharField(max_length=500,help_text="Le lien vers l'image correspondante")
-    frequence = models.IntegerField() # 1 pour toutes les 30min || 2 pour toutes les heures || possiblement extensible, voir views
+    frequence = models.IntegerField(help_text="0 affichage permanent || 1 pour toutes les 30min || 2 pour toutes les heures") # 0 affichage permanent || 1 pour toutes les 30min || 2 pour toutes les heures || possiblement extensible, voir views
 
     def __unicode__(self):
         """Defini la representation sous forme de chaine de caracteres d'un MessagePDF comme le nom du fichier pdf associe."""
